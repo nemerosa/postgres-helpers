@@ -1,0 +1,23 @@
+---
+# Connection to the PG cluster
+connection:
+  # Host name or IP
+  host: ""
+  # Port to reach the PG cluster
+  port: 0
+# Credentials to connect to the PG cluster as DB admin
+auth:
+  # User name
+  username: ""
+  # Password
+  password: ""
+# Database to setup
+database:
+  # Version of PG to use
+  version: 15
+  # Name of the database for which to set owner
+  name: ""
+  # Name of the owner for the database
+  owner: ""
+# Number of seconds for the completion of the operation
+activeDeadlineSeconds: 120

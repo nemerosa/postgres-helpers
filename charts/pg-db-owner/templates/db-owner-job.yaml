@@ -1,0 +1,36 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: "{{ .Release.Name }}-pg-db-owner"
+  annotations:
+      "helm.sh/hook": pre-install
+      "helm.sh/hook-weight": "-5"
+      "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  activeDeadlineSeconds: {{ .Values.activeDeadlineSeconds }}
+  template:
+    metadata:
+      name: "{{ .Release.Name }}-pg-db-owner"
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: "{{ .Release.Name }}-pg-db-owner-job"
+          image: "postgres:{{ .Values.database.version }}"
+          imagePullPolicy: IfNotPresent
+          command:
+            - psql
+            - --username
+            - {{ .Values.auth.username }}
+            - --no-password
+            - --dbname
+            - {{ .Values.database.name }}
+            - --host
+            - {{ .Values.connection.host }}
+            - --port
+            - {{ .Values.connection.port | quote }}
+            - --set=sslmode=require
+            - --command
+            - 'alter database "{{ .Values.database.name }}" owner to "{{ .Values.database.owner }}";'
+          env:
+            - name: PGPASSWORD
+              value: {{ .Values.auth.password | quote }}
