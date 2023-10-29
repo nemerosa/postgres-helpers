@@ -8,6 +8,8 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -27,16 +29,16 @@ jobs:
           helm repo add bitnami https://charts.bitnami.com/bitnami
           helm repo add elastic https://helm.elastic.co
 
-      - name: Packaging
-        run: |
-          helm package \
-            charts/pg-db-owner \
-            charts/pg-db-backup-do-space \
-            --destination .cr-release-packages
+#      - name: Packaging
+#        run: |
+#          helm package \
+#            charts/pg-db-owner \
+#            charts/pg-db-backup-do-space \
+#            --destination .cr-release-packages
 
       - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1.5.0
-        with:
-          skip_packaging: "yes"
+        uses: helm/chart-releaser-action@v1.6.0
+#        with:
+#          skip_packaging: "yes"
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
