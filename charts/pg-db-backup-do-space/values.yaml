@@ -1,11 +1,4 @@
 ---
-# Temporary space
-persistence:
-  # Size of the working directory where to put the SQL file
-  size: 2Gi
-  # Storage class to be used (empty for default)
-  storageClass: ""
-# Extraction parameters
 backup:
   # Schedule
   schedule: "0 0 * * *"
