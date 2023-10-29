@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  pg-db-owner:
+  - apiVersion: v2
+    appVersion: 0.1.1
+    created: "2023-10-29T16:24:33.669914947Z"
+    description: Setting the owner of the database
+    digest: 26ce4a92a4c808510196cdb0c2860c0fc5cdc8c90af48a4f54bfdc09beed02e1
+    name: pg-db-owner
+    type: application
+    urls:
+    - https://github.com/nemerosa/postgres-helpers/releases/download/pg-db-owner-0.1.1/pg-db-owner-0.1.1.tgz
+    version: 0.1.1
+generated: "2023-10-29T16:24:33.669919747Z"
