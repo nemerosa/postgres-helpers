@@ -1,0 +1,8 @@
+apiVersion: v2
+name: pg-db-backup-do-space
+description: This chart is used to set up a job which saves the content of a Digital Ocean database as SQL into a Digital Ocean space.
+
+type: application
+
+version: 0.1.0
+appVersion: "0.1.0"

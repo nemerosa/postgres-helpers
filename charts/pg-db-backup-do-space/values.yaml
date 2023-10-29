@@ -1,0 +1,45 @@
+---
+# Temporary space
+persistence:
+  # Size of the working directory where to put the SQL file
+  size: 2Gi
+  # Storage class to be used (empty for default)
+  storageClass: ""
+# Extraction parameters
+backup:
+  # Schedule
+  schedule: "0 0 * * *"
+# Connection to the PG cluster
+connection:
+  # Host name or IP
+  host: ""
+  # Port to reach the PG cluster
+  port: 0
+# Credentials to connect to the PG cluster as DB admin
+auth:
+  # User name
+  username: ""
+  # Password
+  password: ""
+# Database to backup
+database:
+  # Version of PG to use
+  version: 15
+  # Name of the database to backup
+  name: ""
+# Digital Ocean setup
+digitalocean:
+  # Space to target
+  space:
+    # Access key
+    accessKey: ""
+    # Secret key
+    secretKey: ""
+    # Region
+    region: "fra1"
+    # Bucket
+    bucket: "ontrack-run-do-env-production-eu-cluster-database-backup"
+    # Path definition
+    path:
+      # Root
+      root: sql

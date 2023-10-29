@@ -19,3 +19,4 @@ ontrack` to see the charts.
 # Charts
 
 * [`pg-db-owner`](charts/pg-db-owner/README.md) - setting up the owner of a Postgres database inside a cluster
+* [`pg-db-backup-do-space`](charts/pg-db-backup-do-space/README.md) - job to backup a Digital Ocean (DO) Postgres database into a DO Space
