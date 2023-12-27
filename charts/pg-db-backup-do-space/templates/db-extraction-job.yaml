@@ -35,7 +35,7 @@ spec:
                     --host-bucket='%(bucket)s.{{ .Values.digitalocean.space.region }}.digitaloceanspaces.com' \
                     put \
                     dump.sql \
-                    s3://{{ .Values.digitalocean.space.bucket }}/{{ .Values.digitalocean.space.path.root }}/{{ .Values.database.name }}/dump-$(date +%Y%m%d%H%M%S).sql
+                    s3://{{ .Values.digitalocean.space.bucket }}/{{ .Values.digitalocean.space.path.root }}/{{ or .Values.backup.name .Values.database.name }}/dump-$(date +%Y%m%d%H%M%S).sql
               env:
                 - name: PGSSLMODE
                   value: "require"

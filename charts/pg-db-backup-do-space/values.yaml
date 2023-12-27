@@ -2,6 +2,8 @@
 backup:
   # Schedule
   schedule: "0 0 * * *"
+  # Name of the backup (if not defined, defaults to the database name)
+  name: ""
 # Connection to the PG cluster
 connection:
   # Host name or IP
