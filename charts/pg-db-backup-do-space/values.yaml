@@ -28,6 +28,8 @@ digitalocean:
     accessKey: ""
     # Secret key
     secretKey: ""
+    # Name of the secret containing the keys
+    secretName: ""
     # Region
     region: "fra1"
     # Bucket
