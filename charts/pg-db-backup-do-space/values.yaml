@@ -10,6 +10,8 @@ connection:
   host: ""
   # Port to reach the PG cluster
   port: 0
+  # SSL mode
+  ssl: require
 # Credentials to connect to the PG cluster as DB admin
 auth:
   # User name

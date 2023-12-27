@@ -37,8 +37,10 @@ spec:
                     dump.sql \
                     s3://{{ .Values.digitalocean.space.bucket }}/{{ .Values.digitalocean.space.path.root }}/{{ or .Values.backup.name .Values.database.name }}/dump-$(date +%Y%m%d%H%M%S).sql
               env:
+                {{- if .Values.connection.ssl }}
                 - name: PGSSLMODE
-                  value: "require"
+                  value: {{ .Values.connection.ssl | quote }}
+                {{- end }}
                 - name: PGPASSWORD
                   value: {{ .Values.auth.password | quote }}
                 {{- if .Values.digitalocean.space.secretName }}
