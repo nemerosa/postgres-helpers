@@ -3,6 +3,17 @@ entries:
   pg-db-backup-do-space:
   - apiVersion: v2
     appVersion: 0.1.1
+    created: "2024-01-05T17:06:33.982744852Z"
+    description: This chart is used to set up a job which saves the content of a Digital
+      Ocean database as SQL into a Digital Ocean space.
+    digest: 1e23b1476a3011f29964c4a2f82a23a522c4d910404cd305b699876671be9489
+    name: pg-db-backup-do-space
+    type: application
+    urls:
+    - https://github.com/nemerosa/postgres-helpers/releases/download/pg-db-backup-do-space-0.2.3/pg-db-backup-do-space-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v2
+    appVersion: 0.1.1
     created: "2024-01-05T16:30:55.695953181Z"
     description: This chart is used to set up a job which saves the content of a Digital
       Ocean database as SQL into a Digital Ocean space.
@@ -89,4 +100,4 @@ entries:
     urls:
     - https://github.com/nemerosa/postgres-helpers/releases/download/pg-db-owner-0.1.1/pg-db-owner-0.1.1.tgz
     version: 0.1.1
-generated: "2024-01-05T16:30:55.695990741Z"
+generated: "2024-01-05T17:06:33.982779306Z"
