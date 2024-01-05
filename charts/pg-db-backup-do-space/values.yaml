@@ -38,8 +38,8 @@ digitalocean:
     externalSecret:
       # Enabling the creation of an external secret
       enabled: false
-      # Refresh interval (once a day is enough)
-      refreshInterval: 1d
+      # Refresh interval
+      refreshInterval: 6h
       # Secret store
       store:
         # Name of the secrets store
