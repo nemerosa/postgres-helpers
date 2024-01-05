@@ -34,6 +34,28 @@ digitalocean:
     secretKey: ""
     # Name of the secret containing the keys
     secretName: ""
+    # Using an external secret
+    externalSecret:
+      # Enabling the creation of an external secret
+      enabled: false
+      # Refresh interval (once a day is enough)
+      refreshInterval: 1d
+      # Secret store
+      store:
+        # Name of the secrets store
+        name: vault-backend
+        # Kind of the secrets store
+        kind: ClusterSecretStore
+        # Path to the secret in the KV engine
+        path: digitalocean/space
+        # Name of the access key
+        accessKeyName: accessKey
+        # Name of the secret key
+        secretKeyName: secretKey
+      # Secret to create
+      secret:
+        # Name of the secret to create
+        name: db-backup
     # Region
     region: "fra1"
     # Bucket

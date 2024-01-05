@@ -54,6 +54,17 @@ spec:
                     secretKeyRef:
                       name: {{ .Values.digitalocean.space.secretName | quote }}
                       key: secretKey
+                {{- else if .Values.digitalocean.space.externalSecret.enabled }}
+                - name: DO_SPACE_ACCESS_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: {{ .Values.digitalocean.space.externalSecret.secret.name | quote }}
+                      key: accessKey
+                - name: DO_SPACE_SECRET_KEY
+                  valueFrom:
+                    secretKeyRef:
+                      name: {{ .Values.digitalocean.space.externalSecret.secret.name | quote }}
+                      key: secretKey
                 {{- else }}
                 - name: DO_SPACE_ACCESS_KEY
                   value: {{ .Values.digitalocean.space.accessKey | quote }}
