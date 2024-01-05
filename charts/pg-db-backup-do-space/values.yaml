@@ -47,7 +47,7 @@ digitalocean:
         # Kind of the secrets store
         kind: ClusterSecretStore
         # Path to the secret in the KV engine
-        path: kv/digitalocean/space
+        path: digitalocean/space
         # Name of the access key
         accessKeyName: accessKey
         # Name of the secret key
